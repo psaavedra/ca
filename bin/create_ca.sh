@@ -4,6 +4,13 @@ if [ $# -eq 0 ] ; then
 	echo "Usage: $0 ca_configuration.cfg"
 	exit 1
 fi
+
+if [ ! -f $1 ]
+then
+    echo "$1 doesn't exist or it is not a file"
+    exit 1
+fi
+
 . $1
 
 if [ ! -f $KEY_CONFIG ]
